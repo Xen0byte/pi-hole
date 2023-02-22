@@ -575,6 +575,10 @@ parseList() {
   else
     echo "  ${INFO} Imported ${num_domains} domains"
   fi
+
+  # remove temp_file
+  rm "${temp_file}" > /dev/null 2>&1 || \
+    echo -e "  ${CROSS} Unable to remove ${temp_file}"
 }
 
 compareLists() {
